@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic List Rendering</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+
+function Gallery({children}){
+    return (<div className="gallery">{children}</div>);
+};
+    
+function Image({src}){
+    return (<img src={src} alt="gallery"/>)
+}
+let element=(
+    <>
+     <h1>Images</h1>
+    <Gallery>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/d/l/t/xl-togr-blhn-d126-tripr-original-imagykktzrq5pf76.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/z/o/1/xl-jc24-rn-3-4th-white-jmc-pckt-jump-cuts-original-imagyjjgjmtgwxzf.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/w/b/4/m-gucci-tshirt-sti-original-imahyg3zfydz2yay.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/l3j2cnk0/t-shirt/2/w/p/l-723-2-5-7-8-ftx-original-imagemgrpafdug8v.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/l1grgcw0/t-shirt/x/o/5/m-t428hs-tm5p-eyebogler-original-imagdf2egzjxeqgk.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/6/p/s/m-270141901-jack-jones-original-imaguh4sspudsmbj.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/9/1/o/m-db1024-42-3bros-original-imagz8zkvwjtayrs.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/8/w/h/xxl-twthn-d144-tripr-original-imagyzyyhfqnag36.jpeg?q=70"/>
+      <Image src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/p/o/r/3xl-t572-nb-wm-eyebogler-original-imagzjfuxtwa4uct.jpeg?q=70"/>
+    </Gallery>
+    </>
+)
+
+  let div=document.getElementById("root");
+  ReactDOM.createRoot(div).render(element)
+  </script>
+</html>

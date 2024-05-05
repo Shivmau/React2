@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic List Rendering</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+  function Itemlist({items}){
+    return (
+        <div>
+                {
+                    items.length>0?(
+                        <ul>
+                            { items.map((ele,index)=>(
+                                <li no={index}>{ele}</li>
+                            ))}
+                        </ul>
+                    ):(
+                        <p>No items</p>
+                    )
+                }
+        </div>
+
+   )
+      
+  }
+
+  let element=<>
+  <h1>Items list</h1>
+  <h2>list1</h2>
+    < Itemlist items={["apple","orange","namkin"]} />
+  <h2>list2</h2>
+    < Itemlist items={["tea","koffe","toaste"]} />
+  <h2>list3</h2>
+    < Itemlist items={[]} />
+  </>
+
+
+  let div=document.getElementById("root");
+  ReactDOM.createRoot(div).render(element)
+  </script>
+</html>

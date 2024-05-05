@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create UI With React API</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+
+function Navbar() {
+  return <div className="navbar">NAVBAR</div>;
+}
+
+function Sidebar() {
+  return <div className="sidebar">SIDEBAR</div>;
+}
+
+function Main() {
+  return <div className="main">MAIN</div>;
+}
+
+function Footer() {
+  return <div className="footer">FOOTER</div>;
+}
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <div className="middle-section">
+        <Sidebar />
+        <Main />
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+
+let div=document.getElementById("root")
+ReactDOM.createRoot(div).render(<App/>)
+  
+
+
+
+    
+  </script>
+</html>
